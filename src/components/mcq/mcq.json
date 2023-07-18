@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_mcq_mcqs",
+  "info": {
+    "displayName": "mcq",
+    "icon": "align-center",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "question": {
+      "type": "text"
+    },
+    "multiple_choice": {
+      "type": "component",
+      "repeatable": true,
+      "component": "answer.answers"
+    }
+  }
+}

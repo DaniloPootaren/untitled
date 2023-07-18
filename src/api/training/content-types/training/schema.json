@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "trainings",
+  "info": {
+    "singularName": "training",
+    "pluralName": "trainings",
+    "displayName": "Training",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "post_test": {
+      "type": "component",
+      "repeatable": false,
+      "component": "training.post-test",
+      "required": false
+    },
+    "pre_test": {
+      "type": "component",
+      "repeatable": false,
+      "component": "training.pretest"
+    },
+    "start_date": {
+      "type": "date",
+      "required": true
+    },
+    "end_date": {
+      "type": "date",
+      "required": true
+    },
+    "training_details": {
+      "displayName": "detail",
+      "type": "component",
+      "repeatable": false,
+      "component": "training.detail",
+      "required": true
+    },
+    "training_categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::training-category.training-category"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_checklist_answers",
+  "info": {
+    "displayName": "free text answer",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "response": {
+      "type": "string",
+      "editable": false
+    },
+    "comment": {
+      "type": "string",
+      "editable": false
+    },
+    "question": {
+      "type": "string",
+      "required": true
+    },
+    "is_close_ended": {
+      "type": "boolean"
+    },
+    "booleanAnswer": {
+      "type": "boolean"
+    }
+  }
+}

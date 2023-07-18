@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_training_pretests",
+  "info": {
+    "displayName": "pretest",
+    "icon": "align-justify",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "pretest_summary": {
+      "type": "richtext",
+      "required": true
+    },
+    "passing_marks": {
+      "type": "integer",
+      "required": true
+    },
+    "display": {
+      "type": "integer",
+      "required": true
+    },
+    "mcq": {
+      "displayName": "mcq",
+      "type": "component",
+      "repeatable": true,
+      "component": "question.multiple-answers",
+      "required": true
+    }
+  }
+}

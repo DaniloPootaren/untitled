@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_checklist_ratings",
+  "info": {
+    "displayName": "rating",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "ratings": {
+      "type": "component",
+      "repeatable": true,
+      "component": "checklist.rating-answer"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

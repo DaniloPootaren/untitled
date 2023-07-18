@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_article_contact_infos",
+  "info": {
+    "displayName": "Contact Info",
+    "icon": "address-card",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "email": {
+      "type": "email",
+      "required": true,
+      "unique": false
+    },
+    "phonenumber": {
+      "type": "string",
+      "required": true,
+      "regex": "^\\d{8}$"
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "address": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

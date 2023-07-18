@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "training_categories",
+  "info": {
+    "singularName": "training-category",
+    "pluralName": "training-categories",
+    "displayName": "Training Category",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

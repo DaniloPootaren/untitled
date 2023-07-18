@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_checklist_free_texts",
+  "info": {
+    "displayName": "free text",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "answers": {
+      "displayName": "answer",
+      "type": "component",
+      "repeatable": true,
+      "component": "checklist.answer"
+    }
+  }
+}

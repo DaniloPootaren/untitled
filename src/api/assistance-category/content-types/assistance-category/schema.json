@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "assistance_categories",
+  "info": {
+    "singularName": "assistance-category",
+    "pluralName": "assistance-categories",
+    "displayName": "Assistance Category",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

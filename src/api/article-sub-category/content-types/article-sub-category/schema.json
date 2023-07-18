@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "article_sub_categories",
+  "info": {
+    "singularName": "article-sub-category",
+    "pluralName": "article-sub-categories",
+    "displayName": "Article Sub Category",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "articles": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::article.article",
+      "inversedBy": "article_sub_categories"
+    },
+    "rank": {
+      "type": "integer",
+      "unique": true
+    }
+  }
+}

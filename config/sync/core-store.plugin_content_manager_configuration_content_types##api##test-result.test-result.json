@@ -1,0 +1,166 @@
+{
+  "key": "plugin_content_manager_configuration_content_types::api::test-result.test-result",
+  "value": {
+    "uid": "api::test-result.test-result",
+    "settings": {
+      "bulkable": true,
+      "filterable": true,
+      "searchable": true,
+      "pageSize": 10,
+      "mainField": "id",
+      "defaultSortBy": "id",
+      "defaultSortOrder": "ASC"
+    },
+    "metadatas": {
+      "id": {
+        "edit": {},
+        "list": {
+          "label": "id",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "training": {
+        "edit": {
+          "label": "training",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "title"
+        },
+        "list": {
+          "label": "training",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "users_permissions_user": {
+        "edit": {
+          "label": "users_permissions_user",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "username"
+        },
+        "list": {
+          "label": "users_permissions_user",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "pre_test_result": {
+        "edit": {
+          "label": "pre_test_result",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "pre_test_result",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "post_test_result": {
+        "edit": {
+          "label": "post_test_result",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "post_test_result",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "status": {
+        "edit": {
+          "label": "status",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "status",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "createdAt": {
+        "edit": {
+          "label": "createdAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "createdAt",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "updatedAt": {
+        "edit": {
+          "label": "updatedAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "updatedAt",
+          "searchable": true,
+          "sortable": true
+        }
+      }
+    },
+    "layouts": {
+      "list": [
+        "id",
+        "training",
+        "users_permissions_user",
+        "pre_test_result"
+      ],
+      "edit": [
+        [
+          {
+            "name": "pre_test_result",
+            "size": 12
+          }
+        ],
+        [
+          {
+            "name": "post_test_result",
+            "size": 12
+          }
+        ],
+        [
+          {
+            "name": "status",
+            "size": 6
+          },
+          {
+            "name": "training",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "users_permissions_user",
+            "size": 6
+          }
+        ]
+      ]
+    }
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}

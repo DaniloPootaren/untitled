@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_question_multiple_answers",
+  "info": {
+    "displayName": "multiple_answers",
+    "icon": "align-left",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "question": {
+      "type": "text",
+      "required": true
+    },
+    "multiple_choice": {
+      "displayName": "answers",
+      "type": "component",
+      "repeatable": true,
+      "component": "answer.answers"
+    }
+  }
+}

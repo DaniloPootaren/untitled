@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "test_results",
+  "info": {
+    "singularName": "test-result",
+    "pluralName": "test-results",
+    "displayName": "Training Results",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "training": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::training.training"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "test_results"
+    },
+    "pre_test_result": {
+      "type": "component",
+      "repeatable": false,
+      "component": "test-detail.test-detail"
+    },
+    "post_test_result": {
+      "type": "component",
+      "repeatable": false,
+      "component": "test-detail.test-detail"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "available",
+        "pending",
+        "completed"
+      ],
+      "default": "available"
+    }
+  }
+}

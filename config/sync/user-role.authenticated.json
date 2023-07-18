@@ -1,0 +1,61 @@
+{
+  "name": "HW",
+  "description": "Health worker, default role given to authenticated user.",
+  "type": "authenticated",
+  "permissions": [
+    {
+      "action": "api::article-main-category.article-main-category.find"
+    },
+    {
+      "action": "api::article-sub-category.article-sub-category.find"
+    },
+    {
+      "action": "api::article.article.find"
+    },
+    {
+      "action": "api::department.department.find"
+    },
+    {
+      "action": "api::guideline-category.guideline-category.find"
+    },
+    {
+      "action": "api::guideline.guideline.find"
+    },
+    {
+      "action": "api::job.job.find"
+    },
+    {
+      "action": "api::test-result.test-result.create"
+    },
+    {
+      "action": "api::test-result.test-result.find"
+    },
+    {
+      "action": "api::test-result.test-result.update"
+    },
+    {
+      "action": "api::training-category.training-category.find"
+    },
+    {
+      "action": "api::training-feedback.training-feedback.create"
+    },
+    {
+      "action": "api::training-feedback.training-feedback.find"
+    },
+    {
+      "action": "api::training-report.training-report.findTrainingsByUser"
+    },
+    {
+      "action": "api::training.training.find"
+    },
+    {
+      "action": "api::training.training.findOne"
+    },
+    {
+      "action": "plugin::users-permissions.user.find"
+    },
+    {
+      "action": "plugin::users-permissions.user.me"
+    }
+  ]
+}

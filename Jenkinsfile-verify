@@ -1,0 +1,56 @@
+#!/usr/bin/env groovy
+library "jenkins_shared_library@develop"
+
+pipeline {
+  environment {
+    REGISTRY_CREDENTIAL = 'docker'
+    DOCKER_REGISTRY = "${readMavenPom().getVersion().contains("SNAPSHOT") ? "${DOCKER_SNAPSHOT_REGISTRY}" : "${DOCKER_RELEASE_REGISTRY}"}"
+  }
+  agent {
+    kubernetes {
+      defaultContainer 'jnlp'
+      yaml libraryResource('podTemplates/who/jenkins-agent-all-docker.yml')
+    }
+  }
+  options {
+    timeout(time: 1, unit: 'HOURS')
+    buildDiscarder(logRotator(daysToKeepStr: '10', numToKeepStr: '5', artifactNumToKeepStr: '1'))
+  }
+  stages {
+    stage('Node verify') {
+      steps {
+        container('node') {
+          withNPM(npmrcConfig: 'ac812d4e-d9b0-4ec7-a063-7bbbe03c81a3') {
+            sh "yarn install --legacy-peer-deps --no-optional"
+            sh "yarn run build"
+          }
+        }
+      }
+    }
+  }
+  post {
+    always {
+      script {
+        currentBuild.result = currentBuild.result ?: 'SUCCESS'
+        notifyBitbucket()
+        echo "Committer email address is ${gitData.committerEmail()}"
+      }
+    }
+
+    failure {
+      mail to: "${gitData.committerEmail()}",
+        subject: "Pipeline who-backend-app-verify / branch '${env.BRANCH_NAME}' failed",
+        body: "Build: ${env.BUILD_URL}"
+    }
+    unstable {
+      mail to: "${gitData.committerEmail()}",
+        subject: "Pipeline who-backend-app-verify / branch '${env.BRANCH_NAME}' is unstable",
+        body: "Build: ${env.BUILD_URL}"
+    }
+    fixed {
+      mail to: "${gitData.committerEmail()}",
+        subject: "Pipeline who-backend-app-verify / branch '${env.BRANCH_NAME}' is back to stable",
+        body: "Build: ${env.BUILD_URL}"
+    }
+  }
+}

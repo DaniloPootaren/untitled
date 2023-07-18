@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_links_youtube_links",
+  "info": {
+    "displayName": "Youtube Link",
+    "icon": "anchor",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "link": {
+      "type": "string",
+      "regex": "^(https?:\\/\\/)?(www\\.)?(youtube\\.com|youtu\\.?be)\\/.+([?&].*)?$",
+      "required": true
+    }
+  }
+}

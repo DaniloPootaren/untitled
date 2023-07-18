@@ -1,0 +1,2 @@
+export const MAUPASS_LOGIN_URL = 'https://maupass.govmu.org/api/TokenAuth/Authenticate';
+export const MAUPASS_GET_USER_PROFILE_URL = 'https://maupass.govmu.org/API/services/app/Profile/GetCurrentUserDetails';

@@ -1,0 +1,82 @@
+#!/usr/bin/env groovy
+library "jenkins_shared_library@develop"
+
+pipeline {
+    environment {
+        VERSION = readMavenPom().getVersion()
+        NAME = readMavenPom().getArtifactId()
+        REGISTRY_CREDENTIAL = 'docker'
+
+    }
+    agent {
+        kubernetes {
+            defaultContainer 'jnlp'
+            yaml libraryResource('podTemplates/who/jenkins-agent-all-docker.yml')
+        }
+    }
+    parameters {
+        string(name: 'RELEASE_VERSION', description: 'Version of the release. Example 0.3.0', defaultValue: "0.0.0")
+        string(name: 'NEXT_DEVELOPMENT_VERSION', description: 'Version of the next development version. Example 0.3.1-SNAPSHOT', defaultValue: "0.0.1-SNAPSHOT")
+        string(name: 'TAG_NAME_PREFIX', description: 'Prefix of the scm to be created. Release version will be appended automatically at the end of it. Example: who-backend-app', defaultValue: "who-backend-app_")
+    }
+    options {
+        timeout(time: 1, unit: 'HOURS')
+        buildDiscarder(logRotator(daysToKeepStr: '10', numToKeepStr: '5', artifactNumToKeepStr: '2'))
+    }
+    stages {
+        stage('Maven release') {
+          steps {
+            container('maven') {
+               script {
+                        mavenData.mavenRelease(createBranch: true, VERSION: VERSION, NEXT_DEVELOPMENT_VERSION: NEXT_DEVELOPMENT_VERSION, RELEASE_VERSION: RELEASE_VERSION, CommentPrefix: 'WHO-0', TAG_NAME_PREFIX: TAG_NAME_PREFIX)
+                      }
+            }
+          }
+        }
+         stage('Node build') {
+           steps {
+             container('node') {
+              withNPM(npmrcConfig: 'ac812d4e-d9b0-4ec7-a063-7bbbe03c81a3') {
+               sh "npm install --legacy-peer-deps --no-optional"
+               sh "npm run build"
+             }
+           }
+         }
+       }
+        stage('Docker Build') {
+                    steps {
+                        container('docker') {
+                            sh "docker build -t ${DOCKER_RELEASE_REGISTRY}/${NAME}:${RELEASE_VERSION} ./backend-app"
+                        }
+                    }
+                }
+
+                stage('Docker Push') {
+                    steps {
+                        container('docker') {
+                            withDockerRegistry([credentialsId: "${REGISTRY_CREDENTIAL}", url: "http://${DOCKER_RELEASE_REGISTRY}"]) {
+                                sh "docker push ${DOCKER_RELEASE_REGISTRY}/${NAME}:${RELEASE_VERSION}"
+                        }
+                    }
+              }
+        }
+    }
+    post {
+        success {
+            echo 'Release successful.'
+            mail to: "${whoData.whoMailRecipients()}",
+                    subject: "SUCCESSFUL: who-backend-app-release job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'. Release version: ${RELEASE_VERSION}",
+                    body: "Check console output at ${env.BUILD_URL}"
+        }
+        failure {
+            mail to: "${whoData.whoMailRecipients()}",
+                    subject: "Pipeline who-backend-app-release / branch '${env.BRANCH_NAME}' failed",
+                    body: "Build: ${env.BUILD_URL}"
+        }
+        unstable {
+            mail to: "${whoData.whoMailRecipients()}",
+                    subject: "Pipeline who-backend-app-release / branch '${env.BRANCH_NAME}' is unstable",
+                    body: "Build: ${env.BUILD_URL}"
+        }
+    }
+}

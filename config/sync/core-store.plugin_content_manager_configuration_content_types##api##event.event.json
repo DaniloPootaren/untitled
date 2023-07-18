@@ -1,0 +1,312 @@
+{
+  "key": "plugin_content_manager_configuration_content_types::api::event.event",
+  "value": {
+    "uid": "api::event.event",
+    "settings": {
+      "bulkable": true,
+      "filterable": true,
+      "searchable": true,
+      "pageSize": 10,
+      "mainField": "name",
+      "defaultSortBy": "rank",
+      "defaultSortOrder": "ASC"
+    },
+    "metadatas": {
+      "id": {
+        "edit": {},
+        "list": {
+          "label": "id",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "name": {
+        "edit": {
+          "label": "name",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "name",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "description": {
+        "edit": {
+          "label": "description",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "description",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "image": {
+        "edit": {
+          "label": "image",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "image",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "venue": {
+        "edit": {
+          "label": "venue",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "venue",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "start_date": {
+        "edit": {
+          "label": "start_date",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "start_date",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "end_date": {
+        "edit": {
+          "label": "end_date",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "end_date",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "event_categories": {
+        "edit": {
+          "label": "event_categories",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "name"
+        },
+        "list": {
+          "label": "event_categories",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "notified": {
+        "edit": {
+          "label": "notified",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "notified",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "rank": {
+        "edit": {
+          "label": "rank",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "rank",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "important": {
+        "edit": {
+          "label": "important",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "important",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "views": {
+        "edit": {
+          "label": "views",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "views",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "coordinates": {
+        "edit": {
+          "label": "coordinates",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "coordinates",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "map_enabled": {
+        "edit": {
+          "label": "map_enabled",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "map_enabled",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "createdAt": {
+        "edit": {
+          "label": "createdAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "createdAt",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "updatedAt": {
+        "edit": {
+          "label": "updatedAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "updatedAt",
+          "searchable": true,
+          "sortable": true
+        }
+      }
+    },
+    "layouts": {
+      "edit": [
+        [
+          {
+            "name": "name",
+            "size": 6
+          },
+          {
+            "name": "description",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "image",
+            "size": 6
+          },
+          {
+            "name": "venue",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "coordinates",
+            "size": 6
+          },
+          {
+            "name": "map_enabled",
+            "size": 4
+          }
+        ],
+        [
+          {
+            "name": "important",
+            "size": 4
+          }
+        ],
+        [
+          {
+            "name": "start_date",
+            "size": 6
+          },
+          {
+            "name": "end_date",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "event_categories",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "rank",
+            "size": 4
+          },
+          {
+            "name": "views",
+            "size": 4
+          }
+        ]
+      ],
+      "list": [
+        "rank",
+        "name",
+        "notified",
+        "start_date",
+        "end_date"
+      ]
+    }
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}

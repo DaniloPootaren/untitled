@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "training_feedbacks",
+  "info": {
+    "singularName": "training-feedback",
+    "pluralName": "training-feedbacks",
+    "displayName": "Training Feedback",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "training_feedbacks"
+    },
+    "training": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::training.training"
+    },
+    "comment": {
+      "type": "string"
+    },
+    "rating": {
+      "type": "integer"
+    }
+  }
+}

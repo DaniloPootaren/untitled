@@ -1,0 +1,202 @@
+{
+  "key": "plugin_content_manager_configuration_content_types::api::profile.profile",
+  "value": {
+    "uid": "api::profile.profile",
+    "settings": {
+      "bulkable": true,
+      "filterable": true,
+      "searchable": true,
+      "pageSize": 10,
+      "mainField": "id",
+      "defaultSortBy": "id",
+      "defaultSortOrder": "ASC"
+    },
+    "metadatas": {
+      "id": {
+        "edit": {},
+        "list": {
+          "label": "id",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "users_permissions_user": {
+        "edit": {
+          "label": "users_permissions_user",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "username"
+        },
+        "list": {
+          "label": "users_permissions_user",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "job": {
+        "edit": {
+          "label": "job",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "Position"
+        },
+        "list": {
+          "label": "job",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "license_no": {
+        "edit": {
+          "label": "license_no",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "license_no",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "name": {
+        "edit": {
+          "label": "name",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "name",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "surname": {
+        "edit": {
+          "label": "surname",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "surname",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "nic": {
+        "edit": {
+          "label": "nic",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "nic",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "dob": {
+        "edit": {
+          "label": "dob",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "dob",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "createdAt": {
+        "edit": {
+          "label": "createdAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "createdAt",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "updatedAt": {
+        "edit": {
+          "label": "updatedAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "updatedAt",
+          "searchable": true,
+          "sortable": true
+        }
+      }
+    },
+    "layouts": {
+      "list": [
+        "id",
+        "job",
+        "license_no",
+        "name"
+      ],
+      "edit": [
+        [
+          {
+            "name": "license_no",
+            "size": 6
+          },
+          {
+            "name": "name",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "surname",
+            "size": 6
+          },
+          {
+            "name": "nic",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "dob",
+            "size": 6
+          },
+          {
+            "name": "users_permissions_user",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "job",
+            "size": 6
+          }
+        ]
+      ]
+    }
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}

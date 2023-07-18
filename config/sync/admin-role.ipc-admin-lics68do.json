@@ -1,0 +1,530 @@
+{
+  "name": "IPC Admin",
+  "code": "ipc-admin-lics68do",
+  "description": "IPC: modules checklist, training and guidelines only",
+  "permissions": [
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::checklist-result.checklist-result",
+      "properties": {
+        "fields": [
+          "users_permissions_user",
+          "hospital",
+          "department",
+          "ward",
+          "visiting_team",
+          "general_comment",
+          "section",
+          "status",
+          "checklist",
+          "approved"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::checklist.checklist",
+      "properties": {
+        "fields": [
+          "name",
+          "section"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::checklist.checklist",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "subject": "api::checklist.checklist",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::checklist.checklist",
+      "properties": {
+        "fields": [
+          "name",
+          "section"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::checklist.checklist",
+      "properties": {
+        "fields": [
+          "name",
+          "section"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::department.department",
+      "properties": {
+        "fields": [
+          "name"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::department.department",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::department.department",
+      "properties": {
+        "fields": [
+          "name"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::department.department",
+      "properties": {
+        "fields": [
+          "name"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::guideline-category.guideline-category",
+      "properties": {
+        "fields": [
+          "name"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::guideline-category.guideline-category",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::guideline-category.guideline-category",
+      "properties": {
+        "fields": [
+          "name"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::guideline-category.guideline-category",
+      "properties": {
+        "fields": [
+          "name"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::guideline.guideline",
+      "properties": {
+        "fields": [
+          "name",
+          "description",
+          "document",
+          "guideline_categories"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::guideline.guideline",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "subject": "api::guideline.guideline",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::guideline.guideline",
+      "properties": {
+        "fields": [
+          "name",
+          "description",
+          "document",
+          "guideline_categories"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::guideline.guideline",
+      "properties": {
+        "fields": [
+          "name",
+          "description",
+          "document",
+          "guideline_categories"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::hospital.hospital",
+      "properties": {
+        "fields": [
+          "name"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::hospital.hospital",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::hospital.hospital",
+      "properties": {
+        "fields": [
+          "name"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::hospital.hospital",
+      "properties": {
+        "fields": [
+          "name"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::job.job",
+      "properties": {
+        "fields": [
+          "Position"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::job.job",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::job.job",
+      "properties": {
+        "fields": [
+          "Position"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::job.job",
+      "properties": {
+        "fields": [
+          "Position"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::test-result.test-result",
+      "properties": {
+        "fields": [
+          "training",
+          "users_permissions_user",
+          "pre_test_result.score",
+          "pre_test_result.answers",
+          "post_test_result.score",
+          "post_test_result.answers",
+          "status"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::test-result.test-result",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::test-result.test-result",
+      "properties": {
+        "fields": [
+          "training",
+          "users_permissions_user",
+          "pre_test_result.score",
+          "pre_test_result.answers",
+          "post_test_result.score",
+          "post_test_result.answers",
+          "status"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::test-result.test-result",
+      "properties": {
+        "fields": [
+          "training",
+          "users_permissions_user",
+          "pre_test_result.score",
+          "pre_test_result.answers",
+          "post_test_result.score",
+          "post_test_result.answers",
+          "status"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::training-category.training-category",
+      "properties": {
+        "fields": [
+          "name"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::training-category.training-category",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::training-category.training-category",
+      "properties": {
+        "fields": [
+          "name"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::training-category.training-category",
+      "properties": {
+        "fields": [
+          "name"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::training-feedback.training-feedback",
+      "properties": {
+        "fields": [
+          "users_permissions_user",
+          "training",
+          "comment",
+          "rating"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::training-feedback.training-feedback",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::training-feedback.training-feedback",
+      "properties": {
+        "fields": [
+          "users_permissions_user",
+          "training",
+          "comment",
+          "rating"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::training-feedback.training-feedback",
+      "properties": {
+        "fields": [
+          "users_permissions_user",
+          "training",
+          "comment",
+          "rating"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::training.training",
+      "properties": {
+        "fields": [
+          "title",
+          "image",
+          "post_test.passing_marks",
+          "post_test.display",
+          "post_test.mcq.question",
+          "post_test.mcq.multiple_choice.answer",
+          "post_test.mcq.multiple_choice.correct_answer",
+          "pre_test.title",
+          "pre_test.image",
+          "pre_test.pretest_summary",
+          "pre_test.passing_marks",
+          "pre_test.display",
+          "pre_test.mcq.question",
+          "pre_test.mcq.multiple_choice.answer",
+          "pre_test.mcq.multiple_choice.correct_answer",
+          "start_date",
+          "end_date",
+          "training_details.image",
+          "training_details.description",
+          "training_details.youTube.link",
+          "training_details.files",
+          "training_categories"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::training.training",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::training.training",
+      "properties": {
+        "fields": [
+          "title",
+          "image",
+          "post_test.passing_marks",
+          "post_test.display",
+          "post_test.mcq.question",
+          "post_test.mcq.multiple_choice.answer",
+          "post_test.mcq.multiple_choice.correct_answer",
+          "pre_test.title",
+          "pre_test.image",
+          "pre_test.pretest_summary",
+          "pre_test.passing_marks",
+          "pre_test.display",
+          "pre_test.mcq.question",
+          "pre_test.mcq.multiple_choice.answer",
+          "pre_test.mcq.multiple_choice.correct_answer",
+          "start_date",
+          "end_date",
+          "training_details.image",
+          "training_details.description",
+          "training_details.youTube.link",
+          "training_details.files",
+          "training_categories"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::training.training",
+      "properties": {
+        "fields": [
+          "title",
+          "image",
+          "post_test.passing_marks",
+          "post_test.display",
+          "post_test.mcq.question",
+          "post_test.mcq.multiple_choice.answer",
+          "post_test.mcq.multiple_choice.correct_answer",
+          "pre_test.title",
+          "pre_test.image",
+          "pre_test.pretest_summary",
+          "pre_test.passing_marks",
+          "pre_test.display",
+          "pre_test.mcq.question",
+          "pre_test.mcq.multiple_choice.answer",
+          "pre_test.mcq.multiple_choice.correct_answer",
+          "start_date",
+          "end_date",
+          "training_details.image",
+          "training_details.description",
+          "training_details.youTube.link",
+          "training_details.files",
+          "training_categories"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::upload.assets.copy-link",
+      "subject": null,
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::upload.assets.create",
+      "subject": null,
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::upload.assets.download",
+      "subject": null,
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::upload.assets.update",
+      "subject": null,
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::upload.read",
+      "subject": null,
+      "properties": {},
+      "conditions": []
+    }
+  ]
+}

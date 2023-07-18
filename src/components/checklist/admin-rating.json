@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_checklist_admin_ratings",
+  "info": {
+    "displayName": "Admin Rating",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "ratings": {
+      "displayName": "Admin Rating Question",
+      "type": "component",
+      "repeatable": true,
+      "component": "checklist.admin-rating-question"
+    }
+  }
+}

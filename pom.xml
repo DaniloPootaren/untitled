@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <name>WHO Backend App</name>
+  <description> Web Application for Health Workers </description>
+  <groupId>mu.mns.who.backend</groupId>
+  <artifactId>who-backend-app</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+
+  <issueManagement>
+    <system>Jira</system>
+    <url>http://jira.intra-mns.mu/projects/WHO/</url>
+  </issueManagement>
+
+  <scm>
+    <connection>scm:git:http://bitbucket.intra-mns.mu/scm/who/who-backend-app.git</connection>
+    <developerConnection>scm:git:http://bitbucket.intra-mns.mu/scm/who/who-backend-app.git
+    </developerConnection>
+    <url>http://bitbucket.intra-mns.mu/projects/WHO/repos/who-backend-app/browse</url>
+    <tag>who-backend-app_{project.version}</tag>
+  </scm>
+
+  <properties>
+    <maven.release.version>3.0.0-M1</maven.release.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-release-plugin</artifactId>
+      <version>${maven.release.version}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.codehaus.groovy</groupId>
+          <artifactId>groovy-all</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+  </dependencies>
+
+  <distributionManagement>
+    <repository>
+      <uniqueVersion>false</uniqueVersion>
+      <id>MNSReleaseRepository</id>
+      <name>MNS Releases</name>
+      <url>http://nexus.intra-mns.mu/repository/maven-releases/</url>
+      <layout>default</layout>
+    </repository>
+    <snapshotRepository>
+      <uniqueVersion>true</uniqueVersion>
+      <id>MNSSnapshotRepository</id>
+      <name>MNS Snapshots</name>
+      <url>http://nexus.intra-mns.mu/repository/maven-snapshots/</url>
+      <layout>default</layout>
+    </snapshotRepository>
+  </distributionManagement>
+</project>

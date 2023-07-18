@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_training_post_tests",
+  "info": {
+    "displayName": "posttest",
+    "icon": "address-card",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "passing_marks": {
+      "type": "integer",
+      "required": true
+    },
+    "display": {
+      "type": "integer",
+      "required": true
+    },
+    "mcq": {
+      "displayName": "mcq",
+      "type": "component",
+      "repeatable": true,
+      "component": "question.multiple-answers",
+      "required": true
+    }
+  }
+}

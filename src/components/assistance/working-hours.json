@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_assistance_working_hours",
+  "info": {
+    "displayName": "Working Hours",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "monday": {
+      "type": "string",
+      "required": true
+    },
+    "tuesday": {
+      "type": "string",
+      "required": true
+    },
+    "wednesday": {
+      "type": "string",
+      "required": true
+    },
+    "thursday": {
+      "type": "string",
+      "required": true
+    },
+    "friday": {
+      "type": "string",
+      "required": true
+    },
+    "saturday": {
+      "type": "string",
+      "required": true
+    },
+    "sunday": {
+      "type": "string",
+      "required": true
+    },
+    "public_holidays": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

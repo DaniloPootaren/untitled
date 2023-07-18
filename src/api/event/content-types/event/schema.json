@@ -1,0 +1,71 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events",
+  "info": {
+    "singularName": "event",
+    "pluralName": "events",
+    "displayName": "Event",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "venue": {
+      "type": "string",
+      "required": true
+    },
+    "start_date": {
+      "type": "datetime",
+      "required": true
+    },
+    "end_date": {
+      "type": "datetime",
+      "required": true
+    },
+    "event_categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::event-category.event-category"
+    },
+    "notified": {
+      "type": "boolean",
+      "private": true
+    },
+    "rank": {
+      "type": "integer"
+    },
+    "important": {
+      "type": "boolean"
+    },
+    "views": {
+      "type": "integer",
+      "default": 0
+    },
+    "coordinates": {
+      "type": "customField",
+      "customField": "plugin::leaflet-plugin.leaflet-plugin"
+    },
+    "map_enabled": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

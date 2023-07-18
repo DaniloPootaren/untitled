@@ -1,0 +1,29 @@
+#!/usr/bin/env groovy
+library "jenkins_shared_library@develop"
+
+pipeline {
+  environment{
+    VERSION = readMavenPom().getVersion()
+  }
+  agent {
+    kubernetes {
+      defaultContainer 'jnlp'
+      yaml libraryResource('podTemplates/who/jenkins-agent-all-docker.yml')
+    }
+  }
+  options {
+    timeout(time: 1, unit: 'HOURS')
+    buildDiscarder(logRotator(daysToKeepStr: '10', numToKeepStr: '5', artifactNumToKeepStr: '2'))
+  }
+  stages {
+    stage('Sonar analysis') {
+      steps {
+        container('node') {
+          sh "apt-get update"
+          sh "yarn install --legacy-peer-deps --no-optional"
+          sh "yarn run sonar -Dsonar.projectVersion=${VERSION}"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_training_details",
+  "info": {
+    "displayName": "detail",
+    "icon": "address-card",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "youTube": {
+      "type": "component",
+      "repeatable": true,
+      "component": "links.youtube-link"
+    },
+    "files": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "files"
+      ]
+    }
+  }
+}

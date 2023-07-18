@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_checklist_admin_free_text_questions",
+  "info": {
+    "displayName": "Admin Free Text Question",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "question": {
+      "type": "string",
+      "required": true
+    },
+    "is_close_ended": {
+      "type": "boolean"
+    }
+  }
+}

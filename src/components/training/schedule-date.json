@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_training_schedule_dates",
+  "info": {
+    "displayName": "schedule_date",
+    "icon": "atlas"
+  },
+  "options": {},
+  "attributes": {
+    "start_date": {
+      "type": "date"
+    },
+    "end_date": {
+      "type": "date"
+    }
+  }
+}
