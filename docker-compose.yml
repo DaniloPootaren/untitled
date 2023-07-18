@@ -1,12 +1,12 @@
 version: '3'
 services:
-  who:
-    container_name: who
+  motraining:
+    container_name: motraining
     build:
       context: .
       # @Dev change to Dockerfile.local on local environment
-      dockerfile: Dockerfile
-    image: who:latest
+      dockerfile: Dockerfile.local
+    image: motraining:latest
     restart: unless-stopped
     env_file: .env
     environment:
@@ -29,7 +29,7 @@ services:
     ports:
       - '8080:1337'
     networks:
-      - who
+      - motraining
     depends_on:
       - db
 
@@ -45,16 +45,16 @@ services:
       MYSQL_PASSWORD: ${DATABASE_PASSWORD}
       MYSQL_DATABASE: ${DATABASE_NAME}
     volumes:
-      - who-data:/var/lib/mysql
+      - motraining-data:/var/lib/mysql
     ports:
       - '3306:3306'
     networks:
-      - who
+      - motraining
 
 volumes:
-  who-data:
+  motraining-data:
 
 networks:
-  who:
-    name: WHO
+  motraining:
+    name: MOTRAINING
     driver: bridge
