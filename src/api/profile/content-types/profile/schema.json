@@ -18,11 +18,6 @@
       "target": "plugin::users-permissions.user",
       "inversedBy": "profile"
     },
-    "license_no": {
-      "type": "string",
-      "required": true,
-      "unique": true
-    },
     "name": {
       "type": "string"
     },

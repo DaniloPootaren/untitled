@@ -80,12 +80,6 @@
       "relation": "oneToMany",
       "target": "api::training-feedback.training-feedback",
       "mappedBy": "users_permissions_user"
-    },
-    "checklist_results": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::checklist-result.checklist-result",
-      "mappedBy": "users_permissions_user"
     }
   }
 }

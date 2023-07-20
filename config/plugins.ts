@@ -6,7 +6,7 @@ module.exports = ({env}) => {
       enabled: true,
     },
     'import-export-entries': {
-      enabled: false,
+      enabled: true,
     },
     'leaflet-plugin': {
       enabled: true,
